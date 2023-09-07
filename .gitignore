@@ -1,4 +1,5 @@
 node_modules
+.angular/cache/
 ectron.main.js
 
 # IDEs and editors
@@ -40,5 +41,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-.angular/cache/
