@@ -15,19 +15,21 @@ export class VegetableComponent implements OnInit {
 
   constructor(public productService: ProductService) {
     this.productService.getProducts.subscribe(response => 
-      this.products = response.filter(item => item.type == 'vegetables')
+      this.products = response.filter(item => item.type == 'perfume')
     );
   }
 
   // Sliders
   public sliders = [{
-    title: 'save 10%',
-    subTitle: 'fresh vegetables',
-    image: 'assets/images/slider/7.jpg'
+    title: 'Experience Elegance in Every Whiff',
+    subTitle: 'Elevate your senses and make a lasting impression with our premium, oil-based perfumes.',
+    image: 'assets/images/legend/legend-bg.jpg',
+    buttonText:'shop now'
   }, {
-    title: 'save 10%',
-    subTitle: 'fresh vegetables',
-    image: 'assets/images/slider/8.jpg'
+    title: 'Discover Your Signature Scent',
+    subTitle: 'Explore our diverse range of top perfume collections, each designed to match your unique style and personality.',
+    image: 'assets/images/legend/ladies-bg.jpg',
+    buttonText:'Find your scent'
   }];
 
   // Blogs
@@ -52,6 +54,22 @@ export class VegetableComponent implements OnInit {
     title: 'Lorem ipsum dolor sit consectetur adipiscing elit,',
     by: 'John Dio'
   }]
+
+    // Collection banner
+    public collections = [{
+      image: 'assets/images/legend/legend-men.jpeg',
+      save: 'save 50%',
+      title: 'men'
+    }, {
+      image: 'assets/images/legend/legend-spray.jpg',
+      save: 'save 50%',
+      title: 'women'
+    },
+    {
+      image: 'assets/images/legend/legend-unisex.jpg',
+      save: 'save 50%',
+      title: 'unisex'
+    }];
 
   ngOnInit(): void {
   }

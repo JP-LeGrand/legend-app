@@ -39,6 +39,11 @@ export class SettingsComponent implements OnInit {
     name: 'Dollar',
     currency: 'USD',
     price: 1 // price of usd
+  },
+  {
+    name: 'Rand',
+    currency: 'ZAR',
+    price: 1 // price of usd
   }]
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,

@@ -7,12 +7,12 @@
 	          <div class="col">
 	            <div class="slider-contain">
 	              <div>
-	                <h4>{{slider.title}}</h4>
-	                <h1>{{slider.subTitle}}</h1>
+	                <h2 class="text-white">{{slider.title}}</h2>
+	                <h4 class="text-white">{{slider.subTitle}}</h4>
 	                <a [routerLink]="['/shop/collection/left/sidebar']" 
 	                   [queryParams]="{ category: category}" 
 	                   class="btn btn-solid" [ngClass]="buttonClass">
-	                   {{buttonText}}
+	                   {{slider.buttonText}}
 	                </a>
 	              </div>
 	            </div>
