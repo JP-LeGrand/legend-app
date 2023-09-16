@@ -21,23 +21,24 @@
 <!-- Services end -->
 
 <!-- collection banner start-->
-<section class="pb-0">
-  <div class="container">
-    <div class="row partition2">
-      <div class="col-md-4" *ngFor="let collection of collections">
-        <a [routerLink]="['/shop/collection/left/sidebar']" [queryParams]="{ category: 'perfume'}">
-          <div class="collection-banner p-right text-center">
-            <img [src]="collection.image" class="img-fluid" alt="collection-banner">
-            <div class="contain-banner">
-              <div>
-                <h4>{{collection.save}}</h4>
-                <h2 class="text-white">{{collection.title}}</h2>
-              </div>
-            </div>
+<section class="banner-padding banner-furniture">
+  <div class="container-fluid">
+      <div class="row partition3">
+          <div class="col-md-4" *ngFor="let collection of collections">
+              <a [routerLink]="['/shop/collection/left/sidebar']" 
+                 [queryParams]="{ category: 'perfume'}">
+                  <div class="collection-banner p-right text-end">
+                      <img [src]="collection.image" alt="collection" class="img-fluid">
+                      <div class="contain-banner banner-3">
+                          <div>
+                              <h4>{{collection.save}}</h4>
+                              <h2 class="text-white">{{collection.title}}</h2>
+                          </div>
+                      </div>
+                  </div>
+              </a>
           </div>
-        </a>
       </div>
-    </div>
   </div>
 </section>
 <!-- collection banner End -->
