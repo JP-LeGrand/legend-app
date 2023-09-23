@@ -59,16 +59,19 @@ export class VegetableComponent implements OnInit {
     public collections = [{
       image: 'assets/images/legend/legend-men.jpeg',
       save: 'save 50%',
-      title: 'men'
+      title: 'men',
+      category: "Men"
     }, {
       image: 'assets/images/legend/legend-spray.jpg',
       save: 'save 50%',
-      title: 'women'
+      title: 'women',
+      category: "Women"
     },
     {
       image: 'assets/images/legend/legend-unisex.jpg',
       save: 'save 50%',
-      title: 'unisex'
+      title: 'unisex',
+      category: "Unisex"
     }];
 
   ngOnInit(): void {

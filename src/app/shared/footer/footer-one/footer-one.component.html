@@ -63,9 +63,12 @@
                         </div>
                         <div class="footer-contant">
                             <ul>
-                                <li><a href="javascript:void(0)">Womens Fragrances</a></li>
-                                <li><a href="javascript:void(0)">Mens Fragrances</a></li>
-                                <li><a href="javascript:void(0)">Unisex Fragrances</a></li>
+                                <li><a [routerLink]="['/shop/collection/left/sidebar']" 
+									[queryParams]="{ category: 'Women'}">Womens Fragrances</a></li>
+                                <li><a [routerLink]="['/shop/collection/left/sidebar']" 
+									[queryParams]="{ category: 'Men'}">Mens Fragrances</a></li>
+                                <li><a [routerLink]="['/shop/collection/left/sidebar']" 
+									[queryParams]="{ category: 'Unisex'}">Unisex Fragrances</a></li>
                                 <li><a href="javascript:void(0)">Featured</a></li>
                             </ul>
                         </div>
