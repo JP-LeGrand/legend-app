@@ -205,7 +205,7 @@
                                         </div>
                                     </div>
                                     <div class="text-end">
-                                        <button type="submit" class="btn-solid btn" [disabled]="!checkoutForm.valid" (click)="stripeCheckout()" *ngIf="payment == 'Stripe'">
+                                        <button type="submit" class="btn-solid btn" [disabled]="!checkoutForm.valid" (click)="generatePaymentIdentifier();" *ngIf="payment == 'Stripe'">
                                            Place Order
                                         </button>
                                         <!-- <ngx-paypal [config]="payPalConfig" *ngIf="payment == 'Paypal'"></ngx-paypal> -->

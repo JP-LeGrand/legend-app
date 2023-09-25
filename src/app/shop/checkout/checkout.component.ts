@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-// import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
-import { environment } from '../../../environments/environment';
 import { Product } from "../../shared/classes/product";
 import { ProductService } from "../../shared/services/product.service";
 import { OrderService } from "../../shared/services/order.service";
+import { PaymentData } from 'src/app/shared/classes/payment-data';
+import { PaymentUuid } from 'src/app/shared/classes/payment-uuid';
 
 @Component({
   selector: 'app-checkout',
@@ -14,15 +14,17 @@ import { OrderService } from "../../shared/services/order.service";
 })
 export class CheckoutComponent implements OnInit {
 
-  public checkoutForm:  UntypedFormGroup;
+  public checkoutForm: UntypedFormGroup;
   public products: Product[] = [];
-  // public payPalConfig ? : IPayPalConfig;
+  public paymentData: PaymentData = {};
   public payment: string = 'Stripe';
-  public amount:  any;
+  public amount: any;
+  isLive: boolean = false;
+  paymentUuid: PaymentUuid = {};
 
   constructor(private fb: UntypedFormBuilder,
     public productService: ProductService,
-    private orderService: OrderService) { 
+    private orderService: OrderService) {
     this.checkoutForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
       lastname: ['', [Validators.required, Validators.pattern('[a-zA-Z][a-zA-Z ]+[a-zA-Z]$')]],
@@ -39,79 +41,43 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.productService.cartItems.subscribe(response => this.products = response);
     this.getTotal.subscribe(amount => this.amount = amount);
-    this.initConfig();
   }
 
   public get getTotal(): Observable<number> {
     return this.productService.cartTotalAmount();
   }
-
-  // Stripe Payment Gateway
-  stripeCheckout() {
-    var handler = (<any>window).StripeCheckout.configure({
-      key: environment.stripe_token, // publishble key
-      locale: 'auto',
-      token: (token: any) => {
-        // You can access the token ID with `token.id`.
-        // Get the token ID to your server-side code for use.
-        this.orderService.createOrder(this.products, this.checkoutForm.value, token.id, this.amount);
-      }
+  
+  // Place order
+  onsitePayment(uuid: string) {
+    (<any>window).payfast_do_onsite_payment({
+      uuid
     });
-    handler.open({
-      name: 'Multikart',
-      description: 'Online Fashion Store',
-      amount: this.amount * 100
-    }) 
+  }
+  
+  generatePaymentIdentifier(): PaymentUuid {
+    this.setUpPymentData();
+    this.paymentData.signature = this.orderService.generateSignature(this.paymentData);
+    this.orderService.getUuid(this.paymentData).subscribe(
+      {
+        next: response => this.onsitePayment(response.uuid),
+        error: error => console.error('An error occurred:', error)
+      }
+    );
+
+    return this.paymentUuid;
   }
 
-  // Paypal Payment Gateway
-  private initConfig(): void {
-    // this.payPalConfig = {
-    //     currency: this.productService.Currency.currency,
-    //     clientId: environment.paypal_token,
-    //     createOrderOnClient: (data) => < ICreateOrderRequest > {
-    //       intent: 'CAPTURE',
-    //       purchase_units: [{
-    //           amount: {
-    //             currency_code: this.productService.Currency.currency,
-    //             value: this.amount,
-    //             breakdown: {
-    //                 item_total: {
-    //                     currency_code: this.productService.Currency.currency,
-    //                     value: this.amount
-    //                 }
-    //             }
-    //           }
-    //       }]
-    //   },
-    //     advanced: {
-    //         commit: 'true'
-    //     },
-    //     style: {
-    //         label: 'paypal',
-    //         size:  'small', // small | medium | large | responsive
-    //         shape: 'rect', // pill | rect
-    //     },
-    //     onApprove: (data, actions) => {
-    //         this.orderService.createOrder(this.products, this.checkoutForm.value, data.orderID, this.getTotal);
-    //         console.log('onApprove - transaction was approved, but not authorized', data, actions);
-    //         actions.order.get().then(details => {
-    //             console.log('onApprove - you can get full order details inside onApprove: ', details);
-    //         });
-    //     },
-    //     onClientAuthorization: (data) => {
-    //         console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-    //     },
-    //     onCancel: (data, actions) => {
-    //         console.log('OnCancel', data, actions);
-    //     },
-    //     onError: err => {
-    //         console.log('OnError', err);
-    //     },
-    //     onClick: (data, actions) => {
-    //         console.log('onClick', data, actions);
-    //     }
-    // };
-  }
+  setUpPymentData(): PaymentData {
+    this.paymentData.merchant_id = this.isLive ? '22753341' : '10030211';
+    this.paymentData.merchant_key = this.isLive ? 'lqacaxyuh0vwq' : 'z6pd3bo7kvncn';
+    this.paymentData.return_url = 'https://legend-parfumerie.azurewebsites.net/pages/order/success';
+    this.paymentData.cancel_url = 'https://legend-parfumerie.azurewebsites.net/shop/checkout';
+    this.paymentData.notify_url =
+      'https://cae8-41-216-202-98.ngrok-free.app/payfast';
+    this.paymentData.email_address = this.checkoutForm.value.email;
+    this.paymentData.amount = `${this.amount}`;
+    this.paymentData.item_name = `${this.products[0]?.brand}`;
 
+    return this.paymentData;
+  }
 }
