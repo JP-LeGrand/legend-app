@@ -19,7 +19,6 @@ export class OrderService {
   isLive: boolean = true;
   public paymentData: PaymentData = {};
   private baseUrl: string = '';
-  public PaymentUuid;
 
   constructor(private http: HttpClient, private router: Router) {
     this.passPhrase = this.isLive ? 'FrankincenseLegend001' : 'FrankincenseLegend';
@@ -78,9 +77,7 @@ export class OrderService {
   }
 
   public getUuid(paymentData: PaymentData): Observable<PaymentUuid> {
-    return this.PaymentUuid = this.http.post(this.baseUrl, paymentData).pipe(
-      map(data => data)
-    );
+    return this.http.post(this.baseUrl, paymentData);
   }
 
 }

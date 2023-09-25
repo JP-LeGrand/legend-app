@@ -59,8 +59,8 @@ export class CheckoutComponent implements OnInit {
     this.paymentData.signature = this.orderService.generateSignature(this.paymentData);
     this.orderService.getUuid(this.paymentData).subscribe(
       {
-        next: response => this.onsitePayment(response.uuid),
-        error: error => console.error('An error occurred:', error)
+        next: response => this.onsitePayment(response?.uuid),
+        error: error => error
       }
     );
 
