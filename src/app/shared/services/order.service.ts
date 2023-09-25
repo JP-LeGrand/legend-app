@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { catchError, Observable } from 'rxjs';
 import { PaymentData } from '../classes/payment-data';
 import * as CryptoJS from 'crypto-js';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PaymentUuid } from '../classes/payment-uuid';
 import { map } from 'rxjs/operators';
 const state = {
@@ -16,7 +16,7 @@ const state = {
 export class OrderService {
   passPhrase: string = '';
   paymentUrl: string = '';
-  isLive: boolean = true;
+  isLive: boolean = false;
   public paymentData: PaymentData = {};
   private baseUrl: string = '';
 
@@ -77,7 +77,10 @@ export class OrderService {
   }
 
   public getUuid(paymentData: PaymentData): Observable<PaymentUuid> {
-    return this.http.post(this.baseUrl, paymentData);
+    const headers= new HttpHeaders()
+      .set('Access-Control-Allow-Origin', '*');
+
+    return this.http.post(this.baseUrl, paymentData, {headers});
   }
 
 }
