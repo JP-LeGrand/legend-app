@@ -77,11 +77,7 @@ export class OrderService {
   }
 
   public getUuid(paymentData: PaymentData): Observable<PaymentUuid> {
-    const headers= new HttpHeaders()
-      .set('content-type', 'application/json')
-      .set('Access-Control-Allow-Origin', '*');
-
-    return this.http.post(this.baseUrl, paymentData, {headers});
+    return this.http.post(this.baseUrl, paymentData);
   }
 
 }
