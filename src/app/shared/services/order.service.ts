@@ -16,7 +16,7 @@ const state = {
 export class OrderService {
   passPhrase: string = '';
   paymentUrl: string = '';
-  isLive: boolean = false;
+  isLive: boolean = true;
   public paymentData: PaymentData = {};
   private baseUrl: string = '';
 
@@ -78,6 +78,7 @@ export class OrderService {
 
   public getUuid(paymentData: PaymentData): Observable<PaymentUuid> {
     const headers= new HttpHeaders()
+      .set('content-type', 'application/json')
       .set('Access-Control-Allow-Origin', '*');
 
     return this.http.post(this.baseUrl, paymentData, {headers});

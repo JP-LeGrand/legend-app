@@ -19,7 +19,7 @@ export class CheckoutComponent implements OnInit {
   public paymentData: PaymentData = {};
   public payment: string = 'Stripe';
   public amount: any;
-  isLive: boolean = false;
+  isLive: boolean = true;
   paymentUuid: PaymentUuid = {};
 
   constructor(private fb: UntypedFormBuilder,
