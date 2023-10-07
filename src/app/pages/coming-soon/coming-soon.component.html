@@ -1,19 +1,35 @@
-<div class="template-password">
+<div class="template-password" [ngStyle]="{'background-image': 'url(assets/images/legend/legend-bg.jpg)'}">
     <div class="container">
         <div id="container" class="text-center">
             <div>
                 <div id="login">
                     <div>
                         <div class="logo mb-4">
-                            <a [routerLink]="['/home/fashion']">
-                                <img src="assets/images/icon/logo.png" alt="Multikart_fashion" class="img-fluid">
+                            <a [routerLink]="['/home']">
+                                <img src="assets/images/legend/legends-white-logo.svg" alt="legend_parfumerie" class="img-fluid img-logo-1">
                             </a>
                         </div>
-                        <h2 class="mb-3">
+                        <h2 class="mb-3 text-white">
                             Will be Opening Soon!
                         </h2>
-                    </div>
-                    <div class="row">
+                        <div class="count-down-timer">
+                            <p>Countdown to {{currentTime}}</p>
+                            <div class="wrapper">
+                              <div class="description">
+                                <p>Days</p>
+                                <p>Hours</p>
+                                <p>Minutes</p>
+                                <p>Seconds</p>
+                              </div>
+                              <div class="times">
+                                <p #days></p>
+                                <p #hours></p>
+                                <p #minutes></p>
+                                <p #seconds></p>
+                              </div>
+                            </div>
+                          </div></div>
+                    <!-- <div class="row">
                         <div class="col-sm-12">
                             <form action="#" class="theme-form">
                                 <div class="col-md-12 mt-2">
@@ -38,10 +54,10 @@
                             Are you the store owner? <a href="#">Log in here</a> or <a href="#">change your password
                                 settings</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div id="powered">
-                    <p>© 2020, Powered by Multikart.</p>
+                    <p>© 2023 Legend Parfumerie.</p>
                 </div>
             </div>
         </div>
