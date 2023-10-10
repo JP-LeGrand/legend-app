@@ -44,7 +44,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.productService.cartItems.subscribe(response => this.products = response);
     this.getTotal.subscribe(amount => this.amount = amount);
-    this.paymentUrl = this.isLive ? ' https://www.payfast.co.za/eng/process' : 'https://sandbox.payfast.co.za​/eng/process';
+    this.paymentUrl = this.isLive ? 'https://www.payfast.co.za/eng/process' : 'https://sandbox.payfast.co.za​/eng/process';
   }
 
   public get getTotal(): Observable<number> {
