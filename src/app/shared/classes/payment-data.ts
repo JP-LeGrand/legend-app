@@ -13,5 +13,7 @@ export class PaymentData {
     m_payment_id?: string;
     amount?: string;
     item_name?: string;
+    email_confirmation?: string;
+    confirmation_address?: string;
     signature?: string;
 }

@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { PaymentData } from '../classes/payment-data';
 import * as CryptoJS from 'crypto-js';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PaymentUuid } from '../classes/payment-uuid';
-import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 const state = {
   checkoutItems: JSON.parse(localStorage['checkoutItems'] || '[]')
 }
@@ -75,9 +73,4 @@ export class OrderService {
 
     return CryptoJS.MD5(getString).toString();
   }
-
-  public getUuid(paymentData: PaymentData): Observable<PaymentUuid> {
-    return this.http.post(this.baseUrl, paymentData);
-  }
-
 }
