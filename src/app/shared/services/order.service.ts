@@ -16,13 +16,9 @@ export class OrderService {
   paymentUrl: string = '';
   isLive: boolean = true;
   public paymentData: PaymentData = {};
-  private baseUrl: string = '';
 
   constructor(private http: HttpClient, private router: Router) {
     this.passPhrase = this.isLive ? 'FrankincenseLegend001' : 'FrankincenseLegend';
-
-    this.baseUrl = this.isLive ? 'https://www.payfast.co.za/onsite/process' : 'https://sandbox.payfast.co.za/onsite/process';
-    
   }
 
   // Get Checkout Items
