@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   stripe_token: 'STRIPE_TOKEN',
-  paypal_token: 'PAYPAL_TOKEN'
+  apiUrl: 'https://localhost:7272'
 };
 
 /*

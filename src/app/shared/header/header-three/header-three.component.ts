@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { User } from '../../classes/user';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'app-header-three',
@@ -13,8 +15,11 @@ export class HeaderThreeComponent implements OnInit {
   @Input() sticky: boolean = false; // Default false
   
   public stick: boolean = false;
+  user: User;
 
-  constructor() { }
+  constructor(private accountService: AccountService) {
+    this.accountService.user.subscribe(x => this.user = x);
+}
 
   ngOnInit(): void {
   }
@@ -29,5 +34,9 @@ export class HeaderThreeComponent implements OnInit {
       this.stick = false;
     }
   }
+
+  logout() {
+    this.accountService.logout();
+}
 
 }

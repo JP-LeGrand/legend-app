@@ -6,28 +6,80 @@
             <div class="col-lg-12">
                 <h3>create account</h3>
                 <div class="theme-card">
-                    <form class="theme-form">
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="theme-form">
                         <div class="row">
                             <div class="col-md-6">
-                                <label for="email">First Name</label>
-                                <input type="text" class="form-control" id="fname" placeholder="First Name" required="">
+                                <label >First Name</label>
+                                <input type="text" class="form-control" name="firstName" [formControl]="form.controls['firstName']" value=""
+                                    placeholder="First Name" autocomplete="off" required="" />
+                                <div *ngIf="
+                                form.controls.firstName.touched &&
+                                form.controls.firstName.errors?.required
+                              " class="text text-danger">
+                                    First Name is required.
+                                </div>
+                                <div *ngIf="
+                                form.controls.firstName.touched &&
+                                form.controls.firstName.errors?.pattern
+                              " class="text text-danger">
+                                    First Name must be an alphabates.
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="review">Last Name</label>
-                                <input type="password" class="form-control" id="lname" placeholder="Last Name" required="">
+                                <input type="text" class="form-control"  name="lastName" [formControl]="form.controls['lastName']" value=""
+                                    placeholder="Last Name" autocomplete="off" required="" />
+                                <div *ngIf="
+                                form.controls.lastName.touched &&
+                                form.controls.lastName.errors?.required
+                              " class="text text-danger">
+                                    Last Name is required.
+                                </div>
+                                <div *ngIf="
+                                form.controls.lastName.touched &&
+                                form.controls.lastName.errors?.pattern
+                              " class="text text-danger">
+                                    Last Name must be an alphabates.
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="email">email</label>
-                                <input type="text" class="form-control" id="email" placeholder="Email" required="">
+                                <input type="email" class="form-control"  name="email" [formControl]="form.controls['username']" value=""
+                                    placeholder="Email" autocomplete="off" required="" />
+                                <div *ngIf="
+                                form.controls.username.touched &&
+                                form.controls.username.errors?.required
+                              " class="text text-danger">
+                                    Email is required
+                                </div>
+                                <div *ngIf="
+                                form.controls.username.touched &&
+                                form.controls.username.errors?.username
+                              " class="text text-danger">
+                                    Invalid Email
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="review">Password</label>
-                                <input type="password" class="form-control" id="review" placeholder="Enter your password" required="">
+                                <input type="password" class="form-control"  name="password" [formControl]="form.controls['password']"
+                                    value="" placeholder="Enter your password" autocomplete="off" required="" />
+                                <div *ngIf="
+                                form.controls.password.touched &&
+                                form.controls.password.errors?.required
+                              " class="text text-danger">
+                                    Password is required
+                                </div>
+                                <div *ngIf="
+                            form.controls.password.touched &&
+                            form.controls.password.errors?.minlength
+                          " class="text text-danger">
+                                    Password must be at least 6 characters
+                                </div>
                             </div>
                         </div>
-                        <button class="btn btn-solid">create Account</button>
+                        <button [disabled]="!form.valid" class="btn btn-solid">create Account</button>
                     </form>
                 </div>
             </div>

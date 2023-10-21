@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  stripe_token: 'STRIPE_TOKEN',
-  paypal_token: 'PAYPAL_TOKEN'
+  stripe_token: 'STRIPE_TOKEN', 
+  apiUrl: 'https://legend-parfum-api.azurewebsites.net'
 };

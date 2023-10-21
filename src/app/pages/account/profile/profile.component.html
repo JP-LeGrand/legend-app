@@ -1,78 +1,80 @@
 <app-breadcrumb [title]="'Profile'" [breadcrumb]="'Profile'"></app-breadcrumb>
-<!-- personal deatail section start -->
-<section class="contact-page register-page">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>PERSONAL DETAIL</h3>
-                <form class="theme-form">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="name">First Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter Your name" required="">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="email">Last Name</label>
-                            <input type="text" class="form-control" id="last-name" placeholder="Email" required="">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="review">Phone number</label>
-                            <input type="text" class="form-control" id="review" placeholder="Enter your number" required="">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Email" required="">
-                        </div>
-                        <div class="col-md-12">
-                            <label for="review">Write Your Message</label>
-                            <textarea class="form-control mb-0" placeholder="Write Your Message" id="exampleFormControlTextarea1" rows="6"></textarea>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Section ends -->
 <!-- address section start -->
 <section class="contact-page register-page section-b-space">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <h3>SHIPPING ADDRESS</h3>
-                <form class="theme-form">
+                <form class="theme-form" [formGroup]="form" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="name">flat / plot</label>
-                            <input type="text" class="form-control" id="home-ploat" placeholder="company name" required="">
+                            <label for="name">Complex / Building</label>
+                            <input type="text" class="form-control" id="home-ploat" placeholder="Complex / Building"
+                                name="complexBuilding" [formControl]="form.controls['complexBuilding']">
                         </div>
                         <div class="col-md-6">
                             <label for="name">Address *</label>
-                            <input type="text" class="form-control" id="address-two" placeholder="Address" required="">
+                            <input type="text" class="form-control" id="address-two" placeholder="Address"
+                                [formControl]="form.controls['streetAddress']" required="">
+                            <div *ngIf="
+                            form.controls.streetAddress.touched &&
+                            form.controls.streetAddress.errors?.required
+                          " class="text text-danger">
+                                Address is required.
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="email">Zip Code *</label>
-                            <input type="text" class="form-control" id="zip-code" placeholder="zip-code" required="">
+                            <label for="email">Postal Code *</label>
+                            <input type="text" class="form-control" id="postal-code" placeholder="postal-code"
+                                [formControl]="form.controls['postalCode']" required="">
+                            <div *ngIf="
+                            form.controls.postalCode.touched &&
+                            form.controls.postalCode.errors?.required
+                          " class="text text-danger">
+                                Postal Code is required.
+                            </div>
                         </div>
                         <div class="col-md-6 select_input">
                             <label for="review">Country *</label>
-                            <select class="form-control" size="1">
+                            <select class="form-control" size="1" [formControl]="form.controls['country']">
                                 <option value="India">India</option>
                                 <option value="UAE">UAE</option>
                                 <option value="U.K">U.K</option>
                                 <option value="US">US</option>
+                                <option value="South Africa">South Africa</option>
                             </select>
+                            <div *ngIf="
+                            form.controls.country.touched &&
+                            form.controls.country.errors?.required
+                          " class="text text-danger">
+                                Country is required.
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <label for="review">City *</label>
-                            <input type="text" class="form-control" id="city" placeholder="City" required="">
+                            <input type="text" class="form-control" id="city" placeholder="City"
+                                [formControl]="form.controls['city']" required="">
+                            <div *ngIf="
+                            form.controls.city.touched &&
+                            form.controls.city.errors?.required
+                          " class="text text-danger">
+                                City is required.
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="review">Region/State *</label>
-                            <input type="text" class="form-control" id="region-state" placeholder="Region/state" required="">
+                            <label for="review">Province *</label>
+                            <input type="text" class="form-control" id="region-state" placeholder="Region/state"
+                                [formControl]="form.controls['province']" required="">
+                            <div *ngIf="
+                                form.controls.province.touched &&
+                                form.controls.province.errors?.required
+                              " class="text text-danger">
+                                Province is required.
+                            </div>
                         </div>
                         <div class="col-md-12">
-                            <button class="btn btn-sm btn-solid" type="submit">Save setting</button>
+                            <button [disabled]="!form.valid" class="btn btn-sm btn-solid" type="submit">Save
+                                setting</button>
                         </div>
                     </div>
                 </form>
