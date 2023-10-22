@@ -11,11 +11,15 @@ import { Address } from '../classes/address';
 })
 export class AccountService {
   private userSubject: BehaviorSubject<User>;
+  private addressSubject: BehaviorSubject<Address>;
   public user: Observable<User>;
+  public address: Observable<Address>;
 
   constructor(private router: Router, private http: HttpClient) {
     this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
+    this.addressSubject = new BehaviorSubject<Address>(JSON.parse(localStorage.getItem('address')));
     this.user = this.userSubject.asObservable();
+    this.address = this.addressSubject.asObservable();
   }
 
   public get userValue(): User {
@@ -47,5 +51,53 @@ export class AccountService {
     address.userId = this.userValue.id;
     return this.http.post(`${environment.apiUrl}/address/add`, address);
   }
+
+  getAllAddresses() {
+    return this.http.get<Address[]>(`${environment.apiUrl}/address`);
+}
+
+getUserById(id: string) {
+    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+}
+
+getAddressById(id: string) {
+  return this.http.get<Address>(`${environment.apiUrl}/address/${id}`);
+}
+
+updateUser(id, params) {
+    return this.http.put(`${environment.apiUrl}/users/${id}`, params)
+        .pipe(map(x => {
+            // update stored user if the logged in user updated their own record
+            if (id == this.userValue.id) {
+                // update local storage
+                const user = { ...this.userValue, ...params };
+                localStorage.setItem('user', JSON.stringify(user));
+
+                // publish updated user to subscribers
+                this.userSubject.next(user);
+            }
+            return x;
+        }));
+}
+
+updateAddress(id, params) {
+  return this.http.put(`${environment.apiUrl}/address/${id}`, params)
+      .pipe(map(x => {
+          // update stored user if the logged in user updated their own record
+          if (id == this.userValue.id) {
+              // update local storage
+              const address = { ...this.userValue, ...params };
+              localStorage.setItem('address', JSON.stringify(address));
+
+              // publish updated user to subscribers
+              this.addressSubject.next(address);
+          }
+          return x;
+      }));
+}
+
+deleteAddress(id: string) {
+  return this.http.delete(`${environment.apiUrl}/address/${id}`);
+}
 
 }
