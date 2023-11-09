@@ -8,7 +8,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 export class ComingSoonComponent {
   date: any;
   now: any;
-  targetDate: any = new Date(2023, 9, 31);
+  targetDate: any = new Date(2023, 10, 30);
   targetTime: any = this.targetDate.getTime();
   difference: number;
   months: Array<string> = ["January", "February", "March", "April",
