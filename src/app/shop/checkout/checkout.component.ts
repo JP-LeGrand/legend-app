@@ -139,9 +139,9 @@ export class CheckoutComponent implements OnInit {
         ? "lqacaxyuh0vwq"
         : "z6pd3bo7kvncn";
       this.paymentData.return_url =
-        "https://legend-parfumerie.azurewebsites.net/pages/order/success";
+        "https://legendsparfumerie.com/pages/order/success";
       this.paymentData.cancel_url =
-        "https://legend-parfumerie.azurewebsites.net/shop/checkout";
+        "https://legendsparfumerie.com/shop/checkout";
       this.paymentData.notify_url =
         "https://cae8-41-216-202-98.ngrok-free.app/payfast";
       this.paymentData.email_address = this.checkoutForm.value.email;
