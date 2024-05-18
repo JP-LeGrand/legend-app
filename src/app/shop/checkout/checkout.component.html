@@ -82,9 +82,6 @@
                   <div class="field-label">Country</div>
                   <select name="country" [formControl]="checkoutForm.controls['country']">
                     <option value="" selected>Select Country</option>
-                    <option value="India">India</option>
-                    <option value="USA">USA</option>
-                    <option value="Australia">Australia</option>
                     <option value="South Africa">South Africa</option>
                   </select>
                   <div *ngIf="
@@ -142,54 +139,6 @@
                       checkoutForm.controls.postalcode.errors?.required
                     " class="text text-danger">
                     Postalcode is required
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="stripe-section">
-                    <h5>stripe js</h5>
-                    <div class="content">
-                      <h5>dummy test</h5>
-                      <table>
-                        <tr>
-                          <td>cart number</td>
-                          <td>4242424242424242</td>
-                        </tr>
-                        <tr>
-                          <td>mm/yy</td>
-                          <td>2/2020</td>
-                        </tr>
-                        <tr>
-                          <td>cvc</td>
-                          <td>2222</td>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row margin-cls">
-                <div class="col-12">
-                  <div class="stripe-section">
-                    <h5>paypal</h5>
-                    <div class="content">
-                      <h5>dummy test</h5>
-                      <table>
-                        <tr>
-                          <td>cart number</td>
-                          <td>4152521541244</td>
-                        </tr>
-                        <tr>
-                          <td>mm/yy</td>
-                          <td>11/18</td>
-                        </tr>
-                        <tr>
-                          <td>cvc</td>
-                          <td>521</td>
-                        </tr>
-                      </table>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -260,30 +209,6 @@
                 </div>
 
                 <div class="payment-box" *ngIf="products.length">
-                  <div class="upper-box">
-                    <div class="payment-options">
-                      <ul>
-                        <li>
-                          <div class="radio-option">
-                            <input type="radio" [(ngModel)]="payment" [value]="'Stripe'" name="payment-group"
-                              id="payment-2" />
-                            <label for="payment-2">Stripe
-                              <span class="small-text">Please send a check to Store Name, Store
-                                Street, Store Town, Store State / County, Store
-                                Postcode.</span></label>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="radio-option paypal">
-                            <input type="radio" [(ngModel)]="payment" [value]="'Paypal'" name="payment-group"
-                              id="payment-3" />
-                            <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png"
-                                  alt="" /></span></label>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
                   <div class="text-end">
                     <form #form action={{paymentUrl}} method="post" (ngSubmit)="setUpPymentData($event)">
                       <input type="hidden" name="merchant_id" [(ngModel)]="paymentData.merchant_id" />
