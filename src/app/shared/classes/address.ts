@@ -6,6 +6,6 @@ export class Address {
     province: string;
     country: string;
     suburb: string;
-    postalcode: string;
+    postalCode: string;
     userId: string;
 }
