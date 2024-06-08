@@ -20,6 +20,10 @@ import { PaymentUuid } from "src/app/shared/classes/payment-uuid";
 import { AccountService } from "src/app/shared/services/account.service";
 import { User } from "src/app/shared/classes/user";
 import { Address } from "src/app/shared/classes/address";
+import { Order, OrderStatus } from "src/app/shared/classes/order";
+import { OrderItem } from "src/app/shared/classes/orderItem";
+import { ToastrService } from "ngx-toastr";
+import { ShippingDetails } from "src/app/shared/classes/shippingDetails";
 
 @Component({
   selector: "app-checkout",
@@ -46,7 +50,8 @@ export class CheckoutComponent implements OnInit {
     private fb: UntypedFormBuilder,
     public productService: ProductService,
     private orderService: OrderService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private toastrService: ToastrService
   ) {
     this.user = this.accountService.userValue;
 
@@ -157,5 +162,49 @@ export class CheckoutComponent implements OnInit {
     setTimeout(() => {
       this.form.nativeElement.submit();
     }, 0);
+  }
+
+  placeOrder(event: Event) {
+    const shippingDetails: ShippingDetails = {
+      firstName: this.checkoutForm.value.firstname,
+      lastName: this.checkoutForm.value.lastname,
+      emailAddress: this.checkoutForm.value.email,
+      phoneNumber: this.checkoutForm.value.phone,
+      streetAddress: this.checkoutForm.value.address,
+      complexBuilding: this.checkoutForm.value,
+      city: this.checkoutForm.value.town,
+      province: this.checkoutForm.value.state,
+      country: this.checkoutForm.value.country,
+      suburb: this.checkoutForm.value,
+      postalCode: this.checkoutForm.value.postalcode,
+    };
+
+    const order: Order = {
+      shippingDetails: shippingDetails,
+      orderItems: this.products.map((product) => this.mapToOrderItem(product)),
+      totalAmount: this.amount,
+      status: OrderStatus.Pending,
+    };
+
+    this.orderService
+      .placeOrder(order)
+      .pipe(first())
+      .subscribe({
+        next: () => {
+          this.setUpPymentData(event);
+        },
+        error: (error) => {
+          this.toastrService.error(error);
+        },
+      });
+  }
+
+  mapToOrderItem(product: Product): OrderItem {
+    const orderItem: OrderItem = {
+      price: product.price,
+      productName: product.title,
+      quantity: product.quantity,
+    };
+    return orderItem;
   }
 }

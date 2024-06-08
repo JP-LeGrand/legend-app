@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { PaymentData } from '../classes/payment-data';
 import * as CryptoJS from 'crypto-js';
 import { HttpClient } from '@angular/common/http';
+import { Order } from '../classes/order';
+import { environment } from 'src/environments/environment';
 const state = {
   checkoutItems: JSON.parse(localStorage['checkoutItems'] || '[]')
 }
@@ -68,5 +70,9 @@ export class OrderService {
     }
 
     return CryptoJS.MD5(getString).toString();
+  }
+
+  placeOrder(order: Order) {
+    return this.http.post(`${environment.apiUrl}/order/place-order`, order);
   }
 }

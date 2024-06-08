@@ -210,7 +210,7 @@
 
                 <div class="payment-box" *ngIf="products.length">
                   <div class="text-end">
-                    <form #form action={{paymentUrl}} method="post" (ngSubmit)="setUpPymentData($event)">
+                    <form #form action={{paymentUrl}} method="post" (ngSubmit)="placeOrder($event)">
                       <input type="hidden" name="merchant_id" [(ngModel)]="paymentData.merchant_id" />
                       <input type="hidden" name="merchant_key" [(ngModel)]="paymentData.merchant_key" />
                       <input type="hidden" name="return_url" [(ngModel)]="paymentData.return_url" />
