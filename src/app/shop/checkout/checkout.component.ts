@@ -171,11 +171,11 @@ export class CheckoutComponent implements OnInit {
       emailAddress: this.checkoutForm.value.email,
       phoneNumber: this.checkoutForm.value.phone,
       streetAddress: this.checkoutForm.value.address,
-      complexBuilding: this.checkoutForm.value,
+      complexBuilding: null,
       city: this.checkoutForm.value.town,
       province: this.checkoutForm.value.state,
       country: this.checkoutForm.value.country,
-      suburb: this.checkoutForm.value,
+      suburb: null,
       postalCode: this.checkoutForm.value.postalcode,
     };
 

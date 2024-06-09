@@ -42,7 +42,7 @@
             <div class="col-lg-6">
                 <div class="product-order">
                     <h3>your order details</h3>
-                    <div class="row product-order-detail" *ngFor="let product of orderDetails.product">
+                    <div class="row product-order-detail" *ngFor="let product of orderDetails.orderItems">
                         <div class="col-3">
                             <img [src]="product.images[0].src" alt="" class="img-fluid">
                         </div>
@@ -90,10 +90,10 @@
                     <div class="col-sm-6">
                         <h4>shipping address</h4>
                         <ul class="order-detail">
-                            <li>{{ orderDetails.shippingDetails.address }}</li>
-                            <li>{{ orderDetails.shippingDetails.state }}</li>
-                            <li>{{ orderDetails.shippingDetails.country }}, {{ orderDetails.shippingDetails.postalcode }}</li>
-                            <li>Contact No. {{ orderDetails.shippingDetails.phone }}</li>
+                            <li>{{ orderDetails.shippingDetails.streetAddress }}</li>
+                            <li>{{ orderDetails.shippingDetails.city }}</li>
+                            <li>{{ orderDetails.shippingDetails.country }}, {{ orderDetails.shippingDetails.postalCode }}</li>
+                            <li>Contact No. {{ orderDetails.shippingDetails.phoneNumber }}</li>
                         </ul>
                     </div>
 
