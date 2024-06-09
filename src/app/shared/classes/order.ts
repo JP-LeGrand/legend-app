@@ -16,7 +16,7 @@ export interface Order {
 export enum OrderStatus {
   NotSet = 0,
   Pending = 1,
-  Processing = 2,
+  Processed = 2,
   Shipped = 3,
   Delivered = 4,
   Cancelled = 5

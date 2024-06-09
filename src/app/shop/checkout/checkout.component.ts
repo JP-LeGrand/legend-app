@@ -24,6 +24,7 @@ import { Order, OrderStatus } from "src/app/shared/classes/order";
 import { OrderItem } from "src/app/shared/classes/orderItem";
 import { ToastrService } from "ngx-toastr";
 import { ShippingDetails } from "src/app/shared/classes/shippingDetails";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-checkout",
@@ -136,8 +137,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   // Place order
-  setUpPymentData(event: Event) {
-    event.preventDefault();
+  setUpPymentData(orderId: string) {
     this.zone.run(() => {
       this.paymentData.merchant_id = this.isLive ? "22753341" : "10030211";
       this.paymentData.merchant_key = this.isLive
@@ -147,11 +147,10 @@ export class CheckoutComponent implements OnInit {
         "https://legendsparfumerie.com/pages/order/success";
       this.paymentData.cancel_url =
         "https://legendsparfumerie.com/shop/checkout";
-      this.paymentData.notify_url =
-        "https://cae8-41-216-202-98.ngrok-free.app/payfast";
+      this.paymentData.notify_url = `${environment.apiUrl}/order/place-order?orderId=${orderId}`;
       this.paymentData.email_address = this.checkoutForm.value.email;
       this.paymentData.amount = this.isLive ? "5" : `${this.amount}`;
-      this.paymentData.item_name = `${this.products[0]?.brand}`;
+      this.paymentData.item_name = orderId;
       this.paymentData.email_confirmation = `1`;
       this.paymentData.confirmation_address = this.checkoutForm.value.email;
       this.paymentData.signature = this.orderService.generateSignature(
@@ -190,8 +189,8 @@ export class CheckoutComponent implements OnInit {
       .placeOrder(order)
       .pipe(first())
       .subscribe({
-        next: () => {
-          this.setUpPymentData(event);
+        next: (placeOrderResponse: any) => {
+          this.setUpPymentData(placeOrderResponse?.orderId);
         },
         error: (error) => {
           this.toastrService.error(error);
