@@ -75,4 +75,8 @@ export class OrderService {
   placeOrder(order: Order) {
     return this.http.post(`${environment.apiUrl}/order/place-order`, order);
   }
+
+  getAllUserOrders() {
+    return this.http.get<Order[]>(`${environment.apiUrl}/order`);
+}
 }

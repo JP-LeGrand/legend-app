@@ -25,6 +25,7 @@ import { OrderItem } from "src/app/shared/classes/orderItem";
 import { ToastrService } from "ngx-toastr";
 import { ShippingDetails } from "src/app/shared/classes/shippingDetails";
 import { environment } from "src/environments/environment";
+import { environment as prod_environment } from "src/environments/environment.prod";
 
 @Component({
   selector: "app-checkout",
@@ -147,7 +148,9 @@ export class CheckoutComponent implements OnInit {
         "https://legendsparfumerie.com/pages/order/success";
       this.paymentData.cancel_url =
         "https://legendsparfumerie.com/shop/checkout";
-      this.paymentData.notify_url = `${environment.apiUrl}/order/place-order?orderId=${orderId}`;
+      this.paymentData.notify_url = this.isLive
+        ? `${prod_environment.apiUrl}/order/place-order?orderId=${orderId}`
+        : `${environment.apiUrl}/order/place-order?orderId=${orderId}`;
       this.paymentData.email_address = this.checkoutForm.value.email;
       this.paymentData.amount = this.isLive ? "5" : `${this.amount}`;
       this.paymentData.item_name = orderId;

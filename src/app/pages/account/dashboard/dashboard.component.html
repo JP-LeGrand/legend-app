@@ -105,6 +105,21 @@
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                                <div class="box">
+                                    <div class="box-title">
+                                        <h3>My Orders</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6" *ngFor="let order of orders">
+                                            {{order.orderId}}<br>
+                                            {{order.orderDate}}<br>
+                                            R{{order.totalAmount}}<br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

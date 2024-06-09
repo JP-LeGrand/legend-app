@@ -1,8 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { first } from "rxjs/operators";
 import { Address } from "src/app/shared/classes/address";
+import { Order } from "src/app/shared/classes/order";
 import { User } from "src/app/shared/classes/user";
 import { AccountService } from "src/app/shared/services/account.service";
+import { OrderService } from "src/app/shared/services/order.service";
 
 @Component({
   selector: "app-dashboard",
@@ -14,8 +16,12 @@ export class DashboardComponent implements OnInit {
 
   user: User;
   addresses: Address[];
+  orders: Order[];
 
-  constructor(private accountService: AccountService) {
+  constructor(
+    private accountService: AccountService,
+    private orderService: OrderService
+  ) {
     this.user = this.accountService.userValue;
   }
 
@@ -24,6 +30,11 @@ export class DashboardComponent implements OnInit {
       .getAllAddresses()
       .pipe(first())
       .subscribe((addresses) => (this.addresses = addresses));
+
+    this.orderService
+      .getAllUserOrders()
+      .pipe(first())
+      .subscribe((orders) => (this.orders = orders));
   }
 
   deleteAddress(id: string) {
