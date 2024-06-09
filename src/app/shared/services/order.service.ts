@@ -16,7 +16,7 @@ const state = {
 export class OrderService {
   passPhrase: string = "";
   paymentUrl: string = "";
-  isLive: boolean = false;
+  isLive: boolean = true;
   public paymentData: PaymentData = {};
 
   constructor(private http: HttpClient, private router: Router) {

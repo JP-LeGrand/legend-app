@@ -41,7 +41,7 @@ export class CheckoutComponent implements OnInit {
   public paymentData: PaymentData = {};
   public payment: string = "Stripe";
   public amount: any;
-  isLive: boolean = false;
+  isLive: boolean = true;
   paymentUuid: PaymentUuid = {};
   public paymentUrl: string = "";
   user: User;
@@ -149,8 +149,8 @@ export class CheckoutComponent implements OnInit {
       this.paymentData.cancel_url =
         "https://legendsparfumerie.com/shop/checkout";
       this.paymentData.notify_url = this.isLive
-        ? `${prod_environment.apiUrl}/Order/update-order-status?orderId=${orderId}`
-        : `${environment.ngrok}/Order/update-order-status?orderId=${orderId}`;
+        ? `${prod_environment.apiUrl}/PayFast`
+        : `${environment.ngrok}/PayFast`;
       this.paymentData.email_address = this.checkoutForm.value.email;
       this.paymentData.amount = this.isLive ? "5" : `${this.amount}`;
       this.paymentData.item_name = orderId;

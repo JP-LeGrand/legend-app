@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   stripe_token: 'STRIPE_TOKEN',
-  apiUrl: 'https://localhost:44367',
-  ngrok:'https://265c-197-184-178-235.ngrok-free.app'
+  apiUrl: 'https://localhost:7272',
+  ngrok:'https://348f-197-184-178-235.ngrok-free.app'
 };
 
 /*
