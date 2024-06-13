@@ -26,6 +26,10 @@ export class AccountService {
     return this.userSubject.value;
   }
 
+  public get addressValue(): Address {
+    return this.addressSubject.value;
+  }
+
   login(username, password) {
     return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
       .pipe(map(user => {
@@ -81,15 +85,16 @@ updateUser(id, params) {
 }
 
 updateAddress(id, params) {
+  params.userId = this.userValue.id;
   return this.http.put(`${environment.apiUrl}/address/${id}`, params)
       .pipe(map(x => {
-          // update stored user if the logged in user updated their own record
-          if (id == this.userValue.id) {
+          // update stored address if the logged in user updated their own record
+          if (id == this.addressValue.addressId) {
               // update local storage
-              const address = { ...this.userValue, ...params };
+              const address = { ...this.addressValue, ...params };
               localStorage.setItem('address', JSON.stringify(address));
 
-              // publish updated user to subscribers
+              // publish updated address to subscribers
               this.addressSubject.next(address);
           }
           return x;
