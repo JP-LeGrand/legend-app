@@ -61,7 +61,7 @@ export class ProfileComponent implements OnInit {
       .subscribe({
         next: () => {
           this.toastrService.success('Address added successful');
-          this.router.navigate(['/pages/dashnoard']);
+          this.router.navigate(['/pages/dashboard']);
         },
         error: error => {
           this.toastrService.error(error);
@@ -75,7 +75,7 @@ export class ProfileComponent implements OnInit {
       .subscribe({
         next: () => {
           this.toastrService.success('Address updated successful');
-          this.router.navigate(['/pages/dashnoard']);
+          this.router.navigate(['/pages/dashboard']);
         },
         error: error => {
           this.toastrService.error(error);
