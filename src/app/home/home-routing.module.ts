@@ -31,7 +31,7 @@ const routes: Routes = [
     component: FashionThreeComponent
   },
   {
-    path: 'vegetable',
+    path: '',
     component: VegetableComponent
   },
   {

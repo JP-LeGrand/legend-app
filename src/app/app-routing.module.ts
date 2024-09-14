@@ -4,15 +4,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShopComponent } from './shop/shop.component';
 import { PagesComponent } from './pages/pages.component';
 import { ElementsComponent } from './elements/elements.component';
+import { VegetableComponent } from './home/vegetable/vegetable.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home/vegetable',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: '',
+    component: VegetableComponent,
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
@@ -31,7 +33,7 @@ const routes: Routes = [
     loadChildren: () => import('./elements/elements.module').then(m => m.ElementsModule) },
   {
     path: '**', // Navigate to Home Page if not found any page
-    redirectTo: 'home/vegetable',
+    redirectTo: '',
   },
 ];
 
