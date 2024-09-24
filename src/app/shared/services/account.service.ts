@@ -6,12 +6,12 @@ import { User } from '../classes/user';
 import { environment } from 'src/environments/environment';
 import { Address } from '../classes/address';
 import { environment as prod_environment } from "src/environments/environment.prod";
+import { environment_variables } from "src/environments/env-variables";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
-  isLive: boolean = true;
   apiUrl: string ="";
   private userSubject: BehaviorSubject<User>;
   private addressSubject: BehaviorSubject<Address>;
@@ -23,7 +23,7 @@ export class AccountService {
     this.addressSubject = new BehaviorSubject<Address>(JSON.parse(localStorage.getItem('address')));
     this.user = this.userSubject.asObservable();
     this.address = this.addressSubject.asObservable();
-    this.apiUrl = this.isLive? prod_environment.apiUrl : environment.apiUrl;
+    this.apiUrl = environment_variables.isLive? prod_environment.apiUrl : environment.apiUrl;
   }
 
   public get userValue(): User {

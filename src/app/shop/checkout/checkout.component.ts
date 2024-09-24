@@ -26,6 +26,7 @@ import { ToastrService } from "ngx-toastr";
 import { ShippingDetails } from "src/app/shared/classes/shippingDetails";
 import { environment } from "src/environments/environment";
 import { environment as prod_environment } from "src/environments/environment.prod";
+import { environment_variables } from "src/environments/env-variables";
 
 @Component({
   selector: "app-checkout",
@@ -41,7 +42,6 @@ export class CheckoutComponent implements OnInit {
   public paymentData: PaymentData = {};
   public payment: string = "Stripe";
   public amount: any;
-  isLive: boolean = true;
   paymentUuid: PaymentUuid = {};
   public paymentUrl: string = "";
   user: User;
@@ -98,7 +98,7 @@ export class CheckoutComponent implements OnInit {
     this.prefillUserDetails();
 
     this.getTotal.subscribe((amount) => (this.amount = amount));
-    this.paymentUrl = this.isLive
+    this.paymentUrl = environment_variables.isLive
       ? "https://www.payfast.co.za/eng/process"
       : "https://sandbox.payfast.co.za​/eng/process";
   }
@@ -140,19 +140,19 @@ export class CheckoutComponent implements OnInit {
   // Place order
   setUpPymentData(orderId: string) {
     this.zone.run(() => {
-      this.paymentData.merchant_id = this.isLive ? "22753341" : "10030211";
-      this.paymentData.merchant_key = this.isLive
+      this.paymentData.merchant_id = environment_variables.isLive ? "22753341" : "10030211";
+      this.paymentData.merchant_key = environment_variables.isLive
         ? "lqacaxyuh0vwq"
         : "z6pd3bo7kvncn";
       this.paymentData.return_url =
         "https://legendsparfumerie.com/pages/order/success";
       this.paymentData.cancel_url =
         "https://legendsparfumerie.com/shop/checkout";
-      this.paymentData.notify_url = this.isLive
+      this.paymentData.notify_url = environment_variables.isLive
         ? `${prod_environment.apiUrl}/PayFast`
         : `${environment.ngrok}/PayFast`;
       this.paymentData.email_address = this.checkoutForm.value.email;
-      this.paymentData.amount = this.isLive ? "5" : `${this.amount}`;
+      this.paymentData.amount = environment_variables.isLive ? "5" : `${this.amount}`;
       this.paymentData.item_name = orderId;
       this.paymentData.email_confirmation = "1";
       this.paymentData.confirmation_address = this.checkoutForm.value.email;

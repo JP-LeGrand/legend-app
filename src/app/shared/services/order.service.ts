@@ -7,6 +7,7 @@ import { HttpClient } from "@angular/common/http";
 import { Order } from "../classes/order";
 import { environment } from "src/environments/environment";
 import { environment as prod_environment } from "src/environments/environment.prod";
+import { environment_variables } from "src/environments/env-variables";
 const state = {
   checkoutItems: JSON.parse(localStorage["checkoutItems"] || "[]"),
 };
@@ -17,16 +18,15 @@ const state = {
 export class OrderService {
   passPhrase: string = "";
   paymentUrl: string = "";
-  isLive: boolean = true;
   apiUrl: string ="";
   public paymentData: PaymentData = {};
 
   constructor(private http: HttpClient, private router: Router) {
-    this.passPhrase = this.isLive
+    this.passPhrase = environment_variables.isLive
       ? "FrankincenseLegend001"
       : "FrankincenseLegend";
 
-    this.apiUrl = this.isLive? prod_environment.apiUrl : environment.apiUrl;
+    this.apiUrl = environment_variables.isLive? prod_environment.apiUrl : environment.apiUrl;
   }
 
   // Get Checkout Items
