@@ -5,11 +5,14 @@ import { BehaviorSubject, Observable, map } from 'rxjs';
 import { User } from '../classes/user';
 import { environment } from 'src/environments/environment';
 import { Address } from '../classes/address';
+import { environment as prod_environment } from "src/environments/environment.prod";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
+  isLive: boolean = true;
+  apiUrl: string ="";
   private userSubject: BehaviorSubject<User>;
   private addressSubject: BehaviorSubject<Address>;
   public user: Observable<User>;
@@ -20,6 +23,7 @@ export class AccountService {
     this.addressSubject = new BehaviorSubject<Address>(JSON.parse(localStorage.getItem('address')));
     this.user = this.userSubject.asObservable();
     this.address = this.addressSubject.asObservable();
+    this.apiUrl = this.isLive? prod_environment.apiUrl : environment.apiUrl;
   }
 
   public get userValue(): User {
@@ -31,7 +35,7 @@ export class AccountService {
   }
 
   login(username, password) {
-    return this.http.post<User>(`${environment.apiUrl}/users/authenticate`, { username, password })
+    return this.http.post<User>(`${this.apiUrl}/users/authenticate`, { username, password })
       .pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('user', JSON.stringify(user));
@@ -48,28 +52,28 @@ export class AccountService {
   }
 
   register(user: User) {
-    return this.http.post(`${environment.apiUrl}/users/register`, user);
+    return this.http.post(`${this.apiUrl}/users/register`, user);
   }
 
   addAddress(address: Address) {
     address.userId = this.userValue.id;
-    return this.http.post(`${environment.apiUrl}/address/add`, address);
+    return this.http.post(`${this.apiUrl}/address/add`, address);
   }
 
   getAllAddresses() {
-    return this.http.get<Address[]>(`${environment.apiUrl}/address`);
+    return this.http.get<Address[]>(`${this.apiUrl}/address`);
 }
 
 getUserById(id: string) {
-    return this.http.get<User>(`${environment.apiUrl}/users/${id}`);
+    return this.http.get<User>(`${this.apiUrl}/users/${id}`);
 }
 
 getAddressById(id: string) {
-  return this.http.get<Address>(`${environment.apiUrl}/address/${id}`);
+  return this.http.get<Address>(`${this.apiUrl}/address/${id}`);
 }
 
 updateUser(id, params) {
-    return this.http.put(`${environment.apiUrl}/users/${id}`, params)
+    return this.http.put(`${this.apiUrl}/users/${id}`, params)
         .pipe(map(x => {
             // update stored user if the logged in user updated their own record
             if (id == this.userValue.id) {
@@ -86,7 +90,7 @@ updateUser(id, params) {
 
 updateAddress(id, params) {
   params.userId = this.userValue.id;
-  return this.http.put(`${environment.apiUrl}/address/${id}`, params)
+  return this.http.put(`${this.apiUrl}/address/${id}`, params)
       .pipe(map(x => {
           // update stored address if the logged in user updated their own record
           if (id == this.addressValue.addressId) {
@@ -102,7 +106,7 @@ updateAddress(id, params) {
 }
 
 deleteAddress(id: string) {
-  return this.http.delete(`${environment.apiUrl}/address/${id}`);
+  return this.http.delete(`${this.apiUrl}/address/${id}`);
 }
 
 }

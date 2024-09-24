@@ -6,6 +6,7 @@ import * as CryptoJS from "crypto-js";
 import { HttpClient } from "@angular/common/http";
 import { Order } from "../classes/order";
 import { environment } from "src/environments/environment";
+import { environment as prod_environment } from "src/environments/environment.prod";
 const state = {
   checkoutItems: JSON.parse(localStorage["checkoutItems"] || "[]"),
 };
@@ -17,12 +18,15 @@ export class OrderService {
   passPhrase: string = "";
   paymentUrl: string = "";
   isLive: boolean = true;
+  apiUrl: string ="";
   public paymentData: PaymentData = {};
 
   constructor(private http: HttpClient, private router: Router) {
     this.passPhrase = this.isLive
       ? "FrankincenseLegend001"
       : "FrankincenseLegend";
+
+    this.apiUrl = this.isLive? prod_environment.apiUrl : environment.apiUrl;
   }
 
   // Get Checkout Items
@@ -75,10 +79,10 @@ export class OrderService {
   }
 
   placeOrder(order: Order) {
-    return this.http.post(`${environment.apiUrl}/order/place-order`, order);
+    return this.http.post(`${this.apiUrl}/order/place-order`, order);
   }
 
   getAllUserOrders() {
-    return this.http.get<Order[]>(`${environment.apiUrl}/order`);
+    return this.http.get<Order[]>(`${this.apiUrl}/order`);
   }
 }
