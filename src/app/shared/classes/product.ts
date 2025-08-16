@@ -25,6 +25,7 @@ export interface Variants {
     size?: string;
     color?: string;
     image_id?: number;
+    price?: number;
 }
 
 export interface Images {

@@ -9,8 +9,8 @@
             "new products"
         ],
         "category": "Women",
-        "price": 300,
-        "sale": true,
+        "price": 299,
+        "sale": false,
         "discount": "40",
         "stock": 5,
         "new": true,
@@ -26,15 +26,17 @@
                 "sku": "sku1",
                 "size": "30ml",
                 "color": "yellow",
-                "image_id": 111
+                "image_id": 111,
+                "price": 79
             },
             {
                 "variant_id": 101,
                 "id": 1,
                 "sku": "sku2",
-                "size": "50ml",
+                "size": "60ml",
                 "color": "white",
-                "image_id": 112
+                "image_id": 112,
+                "price": 299
             },
             {
                 "variant_id": 102,
@@ -42,7 +44,8 @@
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 113
+                "image_id": 113,
+                "price": 549
             }
         ],
         "images": [
@@ -88,7 +91,7 @@
             "best sellers"
         ],
         "category": "Women",
-        "price": 185,
+        "price": 299,
         "sale": false,
         "discount": "40",
         "stock": 2,
@@ -104,7 +107,8 @@
                 "sku": "sku1",
                 "size": "30ml",
                 "color": "yellow",
-                "image_id": 211
+                "image_id": 211,
+                "price": 79
             },
             {
                 "variant_id": 201,
@@ -112,7 +116,8 @@
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 213
+                "image_id": 213,
+                "price": 549
             }
         ],
         "images": [
@@ -157,7 +162,7 @@
             "featured products"
         ],
         "category": "Unisex",
-        "price": 174,
+        "price": 299,
         "sale": false,
         "discount": "40",
         "stock": 0,
@@ -171,9 +176,10 @@
                 "variant_id": 300,
                 "id": 1,
                 "sku": "sku2",
-                "size": "50ml",
+                "size": "60ml",
                 "color": "white",
-                "image_id": 311
+                "image_id": 311,
+                "price": 299
             },
             {
                 "variant_id": 301,
@@ -181,7 +187,8 @@
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 312
+                "image_id": 312,
+                "price": 549
             }
         ],
         "images": [
@@ -216,8 +223,8 @@
             "featured products"
         ],
         "category": "Men",
-        "price": 230,
-        "sale": true,
+        "price": 299,
+        "sale": false,
         "discount": "20",
         "stock": 4,
         "new": true,
@@ -232,15 +239,17 @@
                 "sku": "sku1",
                 "size": "30ml",
                 "color": "yellow",
-                "image_id": 111
+                "image_id": 111,
+                "price": 79
             },
             {
                 "variant_id": 502,
                 "id": 1,
                 "sku": "sku2",
-                "size": "50ml",
+                "size": "60ml",
                 "color": "white",
-                "image_id": 112
+                "image_id": 112,
+                "price": 299
             }
         ],
         "images": [
@@ -275,7 +284,7 @@
             "best sellers"
         ],
         "category": "Men",
-        "price": 121,
+        "price": 299,
         "sale": false,
         "discount": "40",
         "stock": 30,
@@ -292,7 +301,8 @@
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 113
+                "image_id": 113,
+                "price": 549
             }
         ],
         "images": [
@@ -335,7 +345,7 @@
             "best sellers"
         ],
         "category": "Men",
-        "price": 121,
+        "price": 299,
         "sale": false,
         "discount": "40",
         "stock": 30,
@@ -352,7 +362,8 @@
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 113
+                "image_id": 113,
+                "price": 549
             }
         ],
         "images": [
