@@ -1,368 +1,388 @@
-[{
-    "id": 1,
-    "title": "Dior",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Dior",
-    "collection": ["new products"],
-    "category": "Women",
-    "price": 300,
-    "sale": true,
-    "discount": "40",
-    "stock": 5,
-    "new": true,
-    "tags": [
-        "fresh",
-        "sweet",
-        "spicy"
-    ],
-    "variants": [
-        {
-            "variant_id": 100,
-            "id": 1,
-            "sku": "sku1",
-            "size": "30ml",
-            "color": "yellow",
-            "image_id": 111
-        },
-        {
-            "variant_id": 101,
-            "id": 1,
-            "sku": "sku2",
-            "size": "50ml",
-            "color": "white",
-            "image_id": 112
-        },
-        {
-            "variant_id": 102,
-            "id": 1,
-            "sku": "sku3",
-            "size": "100ml",
-            "color": "pink",
-            "image_id": 113
-        }
-    ],
-    "images": [
-        {
-            "image_id": 111,
-            "id": 1,
-            "alt": "yellow",
-            "src": "assets/images/legend/ladies-perfume-1.png",
-            "variant_id": [
-                101,
-                102
-            ]
-        },
-        {
-            "image_id": 112,
-            "id": 1,
-            "alt": "white",
-            "src": "assets/images/legend/ladies-perfume-1.png",
-            "variant_id": [
-                102,
-                101
-            ]
-        },
-        {
-            "image_id": 113,
-            "id": 1,
-            "alt": "pink",
-            "src": "assets/images/legend/ladies-perfume-1.png",
-            "variant_id": [
-                100,
-                102
-            ]
-        }
-    ]
-}, {
-    "id": 2,
-    "title": "Lancome",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Lancome",
-    "collection": ["best sellers"],
-    "category": "Women",
-    "price": 185,
-    "sale": false,
-    "discount": "40",
-    "stock": 2,
-    "new": false,
-    "tags": [
-        "bold",
-        "spicy"
-    ],
-    "variants": [
-        {
-            "variant_id": 200,
-            "id": 1,
-            "sku": "sku1",
-            "size": "30ml",
-            "color": "yellow",
-            "image_id": 211
-        },
-        {
-            "variant_id": 201,
-            "id": 1,
-            "sku": "sku3",
-            "size": "100ml",
-            "color": "pink",
-            "image_id": 213
-        }
-    ],
-    "images": [
-        {
-            "image_id": 211,
-            "id": 2,
-            "alt": "olive",
-            "src": "assets/images/legend/ladies-perfume-2.png",
-            "variant_id": [
-                201
-            ]
-        },
-        {
-            "image_id": 212,
-            "id": 2,
-            "alt": "navy",
-            "src": "assets/images/legend/ladies-perfume-2.png",
-            "variant_id": [
-                200,201
-            ]
-        },
-        {
-            "image_id": 213,
-            "id": 2,
-            "alt": "pink",
-            "src": "assets/images/legend/ladies-perfume-2.png",
-            "variant_id": [
-                200,201
-            ]
-        }
-    ]
-}, {
-    "id": 3,
-    "title": "Marc Jacobs",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Marc Jacobs",
-    "collection": ["featured products"],
-    "category": "Unisex",
-    "price": 174,
-    "sale": false,
-    "discount": "40",
-    "stock": 0,
-    "new": true,
-    "tags": [
-        "oud",
-        "sweet"
-    ],
-    "variants": [
+[
     {
-        "variant_id": 300,
         "id": 1,
-        "sku": "sku2",
-        "size": "50ml",
-        "color": "white",
-        "image_id": 311
+        "title": "Mystic Orchid",
+        "description": "An exotic fragrance that layers velvety orchid, sweet plum, and sensual musk. Mystic Orchid is for the woman who is mysterious and alluring, leaving an unforgettable impression wherever she goes.",
+        "type": "perfume",
+        "brand": "Mystic Orchid",
+        "collection": [
+            "new products"
+        ],
+        "category": "Women",
+        "price": 300,
+        "sale": true,
+        "discount": "40",
+        "stock": 5,
+        "new": true,
+        "tags": [
+            "fresh",
+            "sweet",
+            "spicy"
+        ],
+        "variants": [
+            {
+                "variant_id": 100,
+                "id": 1,
+                "sku": "sku1",
+                "size": "30ml",
+                "color": "yellow",
+                "image_id": 111
+            },
+            {
+                "variant_id": 101,
+                "id": 1,
+                "sku": "sku2",
+                "size": "50ml",
+                "color": "white",
+                "image_id": 112
+            },
+            {
+                "variant_id": 102,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 113
+            }
+        ],
+        "images": [
+            {
+                "image_id": 111,
+                "id": 1,
+                "alt": "yellow",
+                "src": "assets/images/legend/ladies-perfume-1.png",
+                "variant_id": [
+                    101,
+                    102
+                ]
+            },
+            {
+                "image_id": 112,
+                "id": 1,
+                "alt": "white",
+                "src": "assets/images/legend/ladies-perfume-1.png",
+                "variant_id": [
+                    102,
+                    101
+                ]
+            },
+            {
+                "image_id": 113,
+                "id": 1,
+                "alt": "pink",
+                "src": "assets/images/legend/ladies-perfume-1.png",
+                "variant_id": [
+                    100,
+                    102
+                ]
+            }
+        ]
     },
     {
-        "variant_id": 301,
-        "id": 1,
-        "sku": "sku3",
-        "size": "100ml",
-        "color": "pink",
-        "image_id": 312
-    }
-    ],
-    "images": [{
-            "image_id": 311,
-            "id": 3,
-            "alt": "white",
-            "src": "assets/images/legend/ladies-perfume-3.png",
-            "variant_id": [
-                301,
-                300
-            ]
-        },
-        {
-            "image_id": 312,
-            "id": 1,
-            "alt": "white",
-            "src": "assets/images/legend/ladies-perfume-3.png",
-            "variant_id": [
-                301
-            ]
-        }
-    ]
-}, {
-    "id": 4,
-    "title": "Alex Simone",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Alex Simone",
-    "collection": ["new products", "on sale"],
-    "category": "Unisex",
-    "price": 98,
-    "sale": false,
-    "discount": "50",
-    "stock": 10,
-    "new": true,
-    "tags": [
-        "unisex"
-    ],
-    "variants": [
-        {
-            "variant_id": 401,
-            "id": 1,
-            "sku": "sku1",
-            "size": "30ml",
-            "color": "yellow",
-            "image_id": 411
-        },
-        {
-            "variant_id": 402,
-            "id": 1,
-            "sku": "sku2",
-            "size": "50ml",
-            "color": "white",
-            "image_id": 412
-        },
-        {
-            "variant_id": 403,
-            "id": 1,
-            "sku": "sku3",
-            "size": "100ml",
-            "color": "pink",
-            "image_id": 413
-        }
-    ],
-    "images": [{
-            "image_id": 411,
-            "id": 4,
-            "alt": "white",
-            "src": "assets/images/legend/men-perfume-3.jpg",
-            "variant_id": [
-                401,
-                402
-            ]
-        },
-        {
-            "image_id": 412,
-            "id": 4,
-            "alt": "skyblue",
-            "src": "assets/images/legend/men-perfume-3.jpg",
-            "variant_id": [
-                403
-            ]
-        }
-    ]
-}, {
-    "id": 5,
-    "title": "Tom Ford",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Tom Ford",
-    "collection": ["featured products"],
-    "category": "Men",
-    "price": 230,
-    "sale": true,
-    "discount": "20",
-    "stock": 4,
-    "new": true,
-    "tags": [
-        "bold",
-        "oud"
-    ],
-    "variants": [  {
-        "variant_id": 501,
-        "id": 1,
-        "sku": "sku1",
-        "size": "30ml",
-        "color": "yellow",
-        "image_id": 111
+        "id": 2,
+        "title": "Radiant Rose",
+        "description": "A delicate and enchanting blend of fresh roses, juicy pear, and warm vanilla. Radiant Rose captures the essence of romance and grace, perfect for the woman who embodies elegance and charm.",
+        "type": "perfume",
+        "brand": "Radiant Rose",
+        "collection": [
+            "best sellers"
+        ],
+        "category": "Women",
+        "price": 185,
+        "sale": false,
+        "discount": "40",
+        "stock": 2,
+        "new": false,
+        "tags": [
+            "bold",
+            "spicy"
+        ],
+        "variants": [
+            {
+                "variant_id": 200,
+                "id": 1,
+                "sku": "sku1",
+                "size": "30ml",
+                "color": "yellow",
+                "image_id": 211
+            },
+            {
+                "variant_id": 201,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 213
+            }
+        ],
+        "images": [
+            {
+                "image_id": 211,
+                "id": 2,
+                "alt": "olive",
+                "src": "assets/images/legend/ladies-perfume-2.png",
+                "variant_id": [
+                    201
+                ]
+            },
+            {
+                "image_id": 212,
+                "id": 2,
+                "alt": "navy",
+                "src": "assets/images/legend/ladies-perfume-2.png",
+                "variant_id": [
+                    200,
+                    201
+                ]
+            },
+            {
+                "image_id": 213,
+                "id": 2,
+                "alt": "pink",
+                "src": "assets/images/legend/ladies-perfume-2.png",
+                "variant_id": [
+                    200,
+                    201
+                ]
+            }
+        ]
     },
     {
-        "variant_id": 502,
-        "id": 1,
-        "sku": "sku2",
-        "size": "50ml",
-        "color": "white",
-        "image_id": 112
-    }
-    ],
-    "images": [{
-            "image_id": 511,
-            "id": 5,
-            "alt": "green",
-            "src": "assets/images/legend/men-perfume-1.jpg",
-            "variant_id": [
-                501,
-                502
-            ]
-        },
-        {
-            "image_id": 512,
-            "id": 5,
-            "alt": "black",
-            "src": "assets/images/legend/men-perfume-1.jpg",
-            "variant_id": [
-                502
-            ]
-        }
-    ]
-}, {
-    "id": 6,
-    "title": "Aramis",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.",
-    "type": "perfume",
-    "brand": "Aramis",
-    "collection": ["best sellers"],
-    "category": "Men",
-    "price": 121,
-    "sale": false,
-    "discount": "40",
-    "stock": 30,
-    "new": true,
-    "tags": [
-        "bold",
-        "sweet",
-        "oud"
-    ],
-    "variants": [
+        "id": 3,
+        "title": "Citrus Bloom",
+        "description": "A vibrant and uplifting scent that combines zesty lemon, blooming jasmine, and soft amber. Citrus Blossom is ideal for the woman who radiates joy and energy, brightening every moment with her presence.",
+        "type": "perfume",
+        "brand": "Citrus Bloom",
+        "collection": [
+            "featured products"
+        ],
+        "category": "Unisex",
+        "price": 174,
+        "sale": false,
+        "discount": "40",
+        "stock": 0,
+        "new": true,
+        "tags": [
+            "oud",
+            "sweet"
+        ],
+        "variants": [
+            {
+                "variant_id": 300,
+                "id": 1,
+                "sku": "sku2",
+                "size": "50ml",
+                "color": "white",
+                "image_id": 311
+            },
+            {
+                "variant_id": 301,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 312
+            }
+        ],
+        "images": [
+            {
+                "image_id": 311,
+                "id": 3,
+                "alt": "white",
+                "src": "assets/images/legend/ladies-perfume-3.png",
+                "variant_id": [
+                    301,
+                    300
+                ]
+            },
+            {
+                "image_id": 312,
+                "id": 1,
+                "alt": "white",
+                "src": "assets/images/legend/ladies-perfume-3.png",
+                "variant_id": [
+                    301
+                ]
+            }
+        ]
+    },
     {
-        "variant_id": 603,
-        "id": 1,
-        "sku": "sku3",
-        "size": "100ml",
-        "color": "pink",
-        "image_id": 113
+        "id": 4,
+        "title": "Oceanic Breeze",
+        "description": "A refreshing blend of sea salt, crisp bergamot, and earthy sandalwood. Oceanic Breeze is ideal for the man who seeks tranquility and balance, bringing the calming essence of the ocean to his daily routine.",
+        "type": "perfume",
+        "brand": "Oceanic Breeze",
+        "collection": [
+            "featured products"
+        ],
+        "category": "Men",
+        "price": 230,
+        "sale": true,
+        "discount": "20",
+        "stock": 4,
+        "new": true,
+        "tags": [
+            "bold",
+            "oud"
+        ],
+        "variants": [
+            {
+                "variant_id": 501,
+                "id": 1,
+                "sku": "sku1",
+                "size": "30ml",
+                "color": "yellow",
+                "image_id": 111
+            },
+            {
+                "variant_id": 502,
+                "id": 1,
+                "sku": "sku2",
+                "size": "50ml",
+                "color": "white",
+                "image_id": 112
+            }
+        ],
+        "images": [
+            {
+                "image_id": 511,
+                "id": 5,
+                "alt": "green",
+                "src": "assets/images/legend/men-perfume-1.jpg",
+                "variant_id": [
+                    501,
+                    502
+                ]
+            },
+            {
+                "image_id": 512,
+                "id": 5,
+                "alt": "black",
+                "src": "assets/images/legend/men-perfume-1.jpg",
+                "variant_id": [
+                    502
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Nightfall Noir",
+        "description": "An enigmatic fragrance that combines rich leather, spicy pepper, and a hint of smoky vetiver. Nightfall Noir is for the man who commands attention and exudes confidence with every step he takes.",
+        "type": "perfume",
+        "brand": "Nightfall Noir",
+        "collection": [
+            "best sellers"
+        ],
+        "category": "Men",
+        "price": 121,
+        "sale": false,
+        "discount": "40",
+        "stock": 30,
+        "new": true,
+        "tags": [
+            "bold",
+            "sweet",
+            "oud"
+        ],
+        "variants": [
+            {
+                "variant_id": 603,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 113
+            }
+        ],
+        "images": [
+            {
+                "image_id": 611,
+                "id": 6,
+                "alt": "olive",
+                "src": "assets/images/legend/men-perfume-2.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 612,
+                "id": 6,
+                "alt": "gray",
+                "src": "assets/images/legend/men-perfume-2.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 613,
+                "id": 6,
+                "alt": "red",
+                "src": "assets/images/legend/men-perfume-1.jpg",
+                "variant_id": [
+                    603
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Eternal Legend",
+        "description": "A bold and invigorating scent that blends fresh citrus with deep woody undertones. Eternal Legend embodies the spirit of adventure and strength, perfect for the modern man who lives with passion and purpose.",
+        "type": "perfume",
+        "brand": "Eternal Legend",
+        "collection": [
+            "best sellers"
+        ],
+        "category": "Men",
+        "price": 121,
+        "sale": false,
+        "discount": "40",
+        "stock": 30,
+        "new": true,
+        "tags": [
+            "bold",
+            "sweet",
+            "oud"
+        ],
+        "variants": [
+            {
+                "variant_id": 603,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 113
+            }
+        ],
+        "images": [
+            {
+                "image_id": 611,
+                "id": 6,
+                "alt": "olive",
+                "src": "assets/images/legend/men-perfume-2.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 612,
+                "id": 6,
+                "alt": "gray",
+                "src": "assets/images/legend/men-perfume-2.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 613,
+                "id": 6,
+                "alt": "red",
+                "src": "assets/images/legend/men-perfume-1.jpg",
+                "variant_id": [
+                    603
+                ]
+            }
+        ]
     }
-    ],
-    "images": [{
-            "image_id": 611,
-            "id": 6,
-            "alt": "olive",
-            "src": "assets/images/legend/men-perfume-2.jpg",
-            "variant_id": [
-                603
-            ]
-        },
-        {
-            "image_id": 612,
-            "id": 6,
-            "alt": "gray",
-            "src": "assets/images/legend/men-perfume-2.jpg",
-            "variant_id": [
-                603
-            ]
-        },
-        {
-            "image_id": 613,
-            "id": 6,
-            "alt": "red",
-            "src": "assets/images/legend/men-perfume-1.jpg",
-            "variant_id": [
-                603
-            ]
-        }
-    ]
-}]
+]
