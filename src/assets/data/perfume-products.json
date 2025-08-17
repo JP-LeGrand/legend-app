@@ -53,7 +53,7 @@
                 "image_id": 111,
                 "id": 1,
                 "alt": "yellow",
-                "src": "assets/images/legend/ladies-perfume-1.png",
+                "src": "assets/images/legend/mystic-orchid.jpg",
                 "variant_id": [
                     101,
                     102
@@ -63,7 +63,7 @@
                 "image_id": 112,
                 "id": 1,
                 "alt": "white",
-                "src": "assets/images/legend/ladies-perfume-1.png",
+                "src": "assets/images/legend/mystic-orchid.jpg",
                 "variant_id": [
                     102,
                     101
@@ -73,7 +73,7 @@
                 "image_id": 113,
                 "id": 1,
                 "alt": "pink",
-                "src": "assets/images/legend/ladies-perfume-1.png",
+                "src": "assets/images/legend/mystic-orchid.jpg",
                 "variant_id": [
                     100,
                     102
@@ -125,7 +125,7 @@
                 "image_id": 211,
                 "id": 2,
                 "alt": "olive",
-                "src": "assets/images/legend/ladies-perfume-2.png",
+                "src": "assets/images/legend/radiant-rose.jpg",
                 "variant_id": [
                     201
                 ]
@@ -134,7 +134,7 @@
                 "image_id": 212,
                 "id": 2,
                 "alt": "navy",
-                "src": "assets/images/legend/ladies-perfume-2.png",
+                "src": "assets/images/legend/radiant-rose.jpg",
                 "variant_id": [
                     200,
                     201
@@ -144,7 +144,7 @@
                 "image_id": 213,
                 "id": 2,
                 "alt": "pink",
-                "src": "assets/images/legend/ladies-perfume-2.png",
+                "src": "assets/images/legend/radiant-rose.jpg",
                 "variant_id": [
                     200,
                     201
@@ -196,7 +196,7 @@
                 "image_id": 311,
                 "id": 3,
                 "alt": "white",
-                "src": "assets/images/legend/ladies-perfume-3.png",
+                "src": "assets/images/legend/citrus-bloom.jpg",
                 "variant_id": [
                     301,
                     300
@@ -206,7 +206,7 @@
                 "image_id": 312,
                 "id": 1,
                 "alt": "white",
-                "src": "assets/images/legend/ladies-perfume-3.png",
+                "src": "assets/images/legend/citrus-bloom.jpg",
                 "variant_id": [
                     301
                 ]
@@ -257,7 +257,7 @@
                 "image_id": 511,
                 "id": 5,
                 "alt": "green",
-                "src": "assets/images/legend/men-perfume-1.jpg",
+                "src": "assets/images/legend/ocean-breeze.jpg",
                 "variant_id": [
                     501,
                     502
@@ -267,7 +267,7 @@
                 "image_id": 512,
                 "id": 5,
                 "alt": "black",
-                "src": "assets/images/legend/men-perfume-1.jpg",
+                "src": "assets/images/legend/ocean-breeze.jpg",
                 "variant_id": [
                     502
                 ]
@@ -310,7 +310,7 @@
                 "image_id": 611,
                 "id": 6,
                 "alt": "olive",
-                "src": "assets/images/legend/men-perfume-2.jpg",
+                "src": "assets/images/legend/nightfall-noir.jpg",
                 "variant_id": [
                     603
                 ]
@@ -319,7 +319,7 @@
                 "image_id": 612,
                 "id": 6,
                 "alt": "gray",
-                "src": "assets/images/legend/men-perfume-2.jpg",
+                "src": "assets/images/legend/nightfall-noir.jpg",
                 "variant_id": [
                     603
                 ]
@@ -328,7 +328,7 @@
                 "image_id": 613,
                 "id": 6,
                 "alt": "red",
-                "src": "assets/images/legend/men-perfume-1.jpg",
+                "src": "assets/images/legend/nightfall-noir.jpg",
                 "variant_id": [
                     603
                 ]
@@ -371,7 +371,7 @@
                 "image_id": 611,
                 "id": 6,
                 "alt": "olive",
-                "src": "assets/images/legend/men-perfume-2.jpg",
+                "src": "assets/images/legend/eternal-legend.jpg",
                 "variant_id": [
                     603
                 ]
@@ -380,7 +380,7 @@
                 "image_id": 612,
                 "id": 6,
                 "alt": "gray",
-                "src": "assets/images/legend/men-perfume-2.jpg",
+                "src": "assets/images/legend/eternal-legend.jpg",
                 "variant_id": [
                     603
                 ]
@@ -389,7 +389,7 @@
                 "image_id": 613,
                 "id": 6,
                 "alt": "red",
-                "src": "assets/images/legend/men-perfume-1.jpg",
+                "src": "assets/images/legend/eternal-legend.jpg",
                 "variant_id": [
                     603
                 ]
