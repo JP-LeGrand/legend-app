@@ -57,21 +57,22 @@ export class VegetableComponent implements OnInit {
 
     // Collection banner
     public collections = [{
-      image: 'assets/images/legend/legend-men.jpeg',
+      image: 'assets/images/legend/male-fragrances.jpg',
       save: 'save 50%',
-      title: 'men',
+      title: 'men fragrances',
       category: "Men"
-    }, {
-      image: 'assets/images/legend/legend-spray.jpg',
+    }, 
+      {
+      image: 'assets/images/legend/unisex.jpg',
       save: 'save 50%',
-      title: 'women',
-      category: "Women"
+      title: 'unisex fragrances',
+      category: "Unisex"
     },
     {
-      image: 'assets/images/legend/legend-unisex.jpg',
+      image: 'assets/images/legend/female-fragrances.jpg',
       save: 'save 50%',
-      title: 'unisex',
-      category: "Unisex"
+      title: 'women fragrances',
+      category: "Women"
     }];
 
   ngOnInit(): void {

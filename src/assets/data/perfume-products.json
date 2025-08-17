@@ -1,4 +1,65 @@
 [
+      {
+        "id": 5,
+        "title": "Nightfall Noir",
+        "description": "An enigmatic fragrance that combines rich leather, spicy pepper, and a hint of smoky vetiver. Nightfall Noir is for the man who commands attention and exudes confidence with every step he takes.",
+        "type": "perfume",
+        "brand": "Nightfall Noir",
+        "collection": [
+            "best sellers"
+        ],
+        "category": "Men",
+        "price": 299,
+        "sale": false,
+        "discount": "40",
+        "stock": 30,
+        "new": true,
+        "tags": [
+            "bold",
+            "sweet",
+            "oud"
+        ],
+        "variants": [
+            {
+                "variant_id": 603,
+                "id": 1,
+                "sku": "sku3",
+                "size": "100ml",
+                "color": "pink",
+                "image_id": 113,
+                "price": 549
+            }
+        ],
+        "images": [
+            {
+                "image_id": 611,
+                "id": 6,
+                "alt": "olive",
+                "src": "assets/images/legend/nightfall-noir.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 612,
+                "id": 6,
+                "alt": "gray",
+                "src": "assets/images/legend/nightfall-noir.jpg",
+                "variant_id": [
+                    603
+                ]
+            },
+            {
+                "image_id": 613,
+                "id": 6,
+                "alt": "red",
+                "src": "assets/images/legend/nightfall-noir.jpg",
+                "variant_id": [
+                    603
+                ]
+            }
+        ]
+    },
     {
         "id": 1,
         "title": "Mystic Orchid",
@@ -152,68 +213,7 @@
             }
         ]
     },
-    {
-        "id": 3,
-        "title": "Citrus Bloom",
-        "description": "A vibrant and uplifting scent that combines zesty lemon, blooming jasmine, and soft amber. Citrus Blossom is ideal for the woman who radiates joy and energy, brightening every moment with her presence.",
-        "type": "perfume",
-        "brand": "Citrus Bloom",
-        "collection": [
-            "featured products"
-        ],
-        "category": "Unisex",
-        "price": 299,
-        "sale": false,
-        "discount": "40",
-        "stock": 0,
-        "new": true,
-        "tags": [
-            "oud",
-            "sweet"
-        ],
-        "variants": [
-            {
-                "variant_id": 300,
-                "id": 1,
-                "sku": "sku2",
-                "size": "60ml",
-                "color": "white",
-                "image_id": 311,
-                "price": 299
-            },
-            {
-                "variant_id": 301,
-                "id": 1,
-                "sku": "sku3",
-                "size": "100ml",
-                "color": "pink",
-                "image_id": 312,
-                "price": 549
-            }
-        ],
-        "images": [
-            {
-                "image_id": 311,
-                "id": 3,
-                "alt": "white",
-                "src": "assets/images/legend/citrus-bloom.jpg",
-                "variant_id": [
-                    301,
-                    300
-                ]
-            },
-            {
-                "image_id": 312,
-                "id": 1,
-                "alt": "white",
-                "src": "assets/images/legend/citrus-bloom.jpg",
-                "variant_id": [
-                    301
-                ]
-            }
-        ]
-    },
-    {
+      {
         "id": 4,
         "title": "Oceanic Breeze",
         "description": "A refreshing blend of sea salt, crisp bergamot, and earthy sandalwood. Oceanic Breeze is ideal for the man who seeks tranquility and balance, bringing the calming essence of the ocean to his daily routine.",
@@ -275,62 +275,62 @@
         ]
     },
     {
-        "id": 5,
-        "title": "Nightfall Noir",
-        "description": "An enigmatic fragrance that combines rich leather, spicy pepper, and a hint of smoky vetiver. Nightfall Noir is for the man who commands attention and exudes confidence with every step he takes.",
+        "id": 3,
+        "title": "Citrus Bloom",
+        "description": "A vibrant and uplifting scent that combines zesty lemon, blooming jasmine, and soft amber. Citrus Blossom is ideal for the woman who radiates joy and energy, brightening every moment with her presence.",
         "type": "perfume",
-        "brand": "Nightfall Noir",
+        "brand": "Citrus Bloom",
         "collection": [
-            "best sellers"
+            "featured products"
         ],
-        "category": "Men",
+        "category": "Unisex",
         "price": 299,
         "sale": false,
         "discount": "40",
-        "stock": 30,
+        "stock": 0,
         "new": true,
         "tags": [
-            "bold",
-            "sweet",
-            "oud"
+            "oud",
+            "sweet"
         ],
         "variants": [
             {
-                "variant_id": 603,
+                "variant_id": 300,
+                "id": 1,
+                "sku": "sku2",
+                "size": "60ml",
+                "color": "white",
+                "image_id": 311,
+                "price": 299
+            },
+            {
+                "variant_id": 301,
                 "id": 1,
                 "sku": "sku3",
                 "size": "100ml",
                 "color": "pink",
-                "image_id": 113,
+                "image_id": 312,
                 "price": 549
             }
         ],
         "images": [
             {
-                "image_id": 611,
-                "id": 6,
-                "alt": "olive",
-                "src": "assets/images/legend/nightfall-noir.jpg",
+                "image_id": 311,
+                "id": 3,
+                "alt": "white",
+                "src": "assets/images/legend/citrus-bloom.jpg",
                 "variant_id": [
-                    603
+                    301,
+                    300
                 ]
             },
             {
-                "image_id": 612,
-                "id": 6,
-                "alt": "gray",
-                "src": "assets/images/legend/nightfall-noir.jpg",
+                "image_id": 312,
+                "id": 1,
+                "alt": "white",
+                "src": "assets/images/legend/citrus-bloom.jpg",
                 "variant_id": [
-                    603
-                ]
-            },
-            {
-                "image_id": 613,
-                "id": 6,
-                "alt": "red",
-                "src": "assets/images/legend/nightfall-noir.jpg",
-                "variant_id": [
-                    603
+                    301
                 ]
             }
         ]
